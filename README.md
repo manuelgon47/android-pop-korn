@@ -40,10 +40,35 @@ Just with that you will get the pop corn menu working without buttons.
 <h5>Add menu entries</h5>
 ```
 PopCornMenu menu = (PopCornMenu)findViewById(R.id.popmenu);
-  if (menu != null) {
+if (menu != null) {
     int[] buttons = new int[]{R.drawable.drawableButton1, R.drawable.drawableButton2, R.drawable.drawableButton3, R.drawable.drawableButton4};
     menu.setup(buttons);
-  }
+}
+```
+
+<br />
+<h5>Set buttons listener</h5>
+You receive an index that correspond with the position in which you put the button.
+```
+menu.setListener(new PopCornMenuListener() {
+    @Override
+    public void onPopCornMenuClicked(int index) {
+        switch (index) {
+            case 0:
+                Toast.makeText(MainActivity.this, "Tap on drawableButton1", Toast.LENGTH_SHORT).show();
+                break;
+            case 1:
+                Toast.makeText(MainActivity.this, "Tap on drawableButton2", Toast.LENGTH_SHORT).show();
+                break;
+            case 2:
+                Toast.makeText(MainActivity.this, "Tap on drawableButton3", Toast.LENGTH_SHORT).show();
+                break;
+            case 3:
+                Toast.makeText(MainActivity.this, "Tap on drawableButton4", Toast.LENGTH_SHORT).show();
+                break;
+        }
+    }
+});
 ```
 
 <br />
@@ -68,4 +93,22 @@ menu.changeMenuColor(Color.RED);
 - Using your values from your xml colours file
 ```
 menu.changeMenuColor(getResources().getColor(R.color.your_colour_resource));
+```
+
+<br />
+# License
+```
+Copyright (C) 2015 Manuel González Villegas
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 ```
