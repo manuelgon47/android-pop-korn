@@ -15,7 +15,7 @@ Steps to install the module:
 - Make git clone from this repo inside libs folder
 - Import the android library<br/>
 <img src="https://github.com/BD-ES/android-pop-korn/blob/master/screenshots/import_module.png" />
-- In your app gradle.build:
+- In your app build.gradle:
 ```
 dependencies {
     compile project(":popcornmenu")
