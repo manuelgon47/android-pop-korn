@@ -39,7 +39,9 @@ public class PopCornMenu extends RelativeLayout {
     /**
      * Menu items
      */
-    List<MenuItem> menuButtons;
+    private List<MenuItem> menuButtons;
+
+    private PopCornMenuListener listener;
 
     private long openAniationDuration;
     private long closeAniationDuration;
@@ -145,7 +147,10 @@ public class PopCornMenu extends RelativeLayout {
          * 4.- Genero un ID único para esta vista
          * 5.- Lo añado a la vista y al array de botones
          */
-        for(int drawable : buttons) {
+        //for(int drawable : buttons) {
+        for (int i = 0; i < buttons.length; i++) {
+            final int index = i;
+            int drawable = buttons[i];
             // Create button menu
             ImageView menuBtn = new ImageView(getContext(), attrs);
             RelativeLayout.LayoutParams btn1Params = new RelativeLayout.LayoutParams(getPcFromDP(40), getPcFromDP(40));
@@ -157,6 +162,16 @@ public class PopCornMenu extends RelativeLayout {
             btn1Params.topMargin = getPcFromDP(5);
             menuBtn.setLayoutParams(btn1Params);
             menuBtn.setImageResource(drawable);
+
+            // Button listener
+            menuBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null) {
+                        listener.onPopCornMenuClicked(index);
+                    }
+                }
+            });
 
             // Generate Id
             int btnId = View.generateViewId();
@@ -433,6 +448,10 @@ public class PopCornMenu extends RelativeLayout {
      */
     public void changeMenuColor(int color) {
         fab.getBackground().setColorFilter(color, PorterDuff.Mode.MULTIPLY );
+    }
+
+    public void setListener(PopCornMenuListener listener) {
+        this.listener = listener;
     }
 
     // **********************
