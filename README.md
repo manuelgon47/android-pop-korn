@@ -14,7 +14,7 @@ Steps to install the module:
 - In terminal go to: $YourAndroidWorkspace/AppName/yourappmodule/libs
 - Make git clone from this repo inside libs folder
 - Import the android library<br/>
-<img src="" />
+<img src="https://github.com/BD-ES/android-pop-korn/blob/master/screenshots/import_module.png" />
 - In your app gradle.build:
 ```
 dependencies {
