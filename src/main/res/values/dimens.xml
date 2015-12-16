@@ -1,0 +1,5 @@
+<resources>
+    <dimen name="menu_elevation">5dp</dimen>
+    <dimen name="menu_rise">3dp</dimen>
+    <integer name="menu_duration">100</integer>
+</resources>
