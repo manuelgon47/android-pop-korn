@@ -4,6 +4,25 @@ A popcorn menu for android
 <br /><br />
 <img src="https://github.com/BD-ES/android-pop-korn/blob/master/screenshots/pop-corn-menu.gif" />
 
+<h3>Installation</h3>
+Requeriments:
+- minSdkVersion 21
+- App style with NoActionBar
+
+Steps to install the module:
+<br />
+- In terminal go to: $YourAndroidWorkspace/AppName/yourappmodule/libs
+- Make git clone from this repo inside libs folder
+- Import the android library<br/>
+<img src="" />
+- In your app gradle.build:
+```
+dependencies {
+    compile project(":popcornmenu")
+}
+```
+<br />
+
 <h3>How to use</h3>
 In your xml activity add:
 ```
